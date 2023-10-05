@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { ReactQueryDevtools } from "react-query/devtools";
 import { useRecoilValue } from "recoil";
 import { lightTheme, darkTheme } from "./theme";
 import { themeState } from "./recoil/Theme";
@@ -20,7 +19,6 @@ function App() {
             <Route path="/post/:id" element={<Detail />}></Route>
           </Routes>
         </BrowserRouter>
-        <ReactQueryDevtools initialIsOpen={true} />
       </ThemeProvider>
     </>
   );

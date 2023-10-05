@@ -3,8 +3,6 @@ import { IPost } from "../../../config/firebasetype";
 import { useUpdatePost } from "../../../hooks/useMutationPost";
 import styled from "styled-components";
 import { queryClient } from "../../../config/queryClient";
-import { FiEdit } from "react-icons/fi";
-import { BsBackspace } from "react-icons/bs";
 
 interface EditPostFormProps {
   post: IPost;
@@ -84,7 +82,7 @@ export default EditPostForm;
 const FormContainer = styled.div`
   width: ${({ theme }) => theme.sizes.sm};
   max-width: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bg_element4};
   border-radius: 8px;
   margin: 20px 0 20px;
   padding: 1rem;
@@ -98,7 +96,7 @@ const Label = styled.label`
   font-size: 0.78rem;
   margin: 1rem 0.3rem 0.2rem;
   display: block;
-  color: ${({ theme }) => theme.colors.tagText};
+  color: ${({ theme }) => theme.colors.text3};
 `;
 
 const Input = styled.input`
@@ -108,7 +106,8 @@ const Input = styled.input`
   border-radius: 12px;
   width: 100%;
   height: 38px;
-  background-color: ${({ theme }) => theme.colors.inputColor};
+  background-color: ${({ theme }) => theme.colors.bg_element3};
+  color: ${({ theme }) => theme.colors.text2};
 `;
 
 const Textarea = styled.textarea`
@@ -119,7 +118,8 @@ const Textarea = styled.textarea`
   border-radius: 12px;
   width: 100%;
   height: 185px;
-  background-color: ${({ theme }) => theme.colors.inputColor};
+  background-color: ${({ theme }) => theme.colors.bg_element3};
+  color: ${({ theme }) => theme.colors.text2};
 `;
 
 const ButtonGroup = styled.div`
@@ -133,14 +133,14 @@ const Button = styled.button`
   white-space: nowrap;
   padding: 8px 10px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.activeColor};
+  background-color: ${({ theme }) => theme.colors.primary1};
   cursor: pointer;
   transition: all 0.2s ease-in-out 0s;
   border: none;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.text6};
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.activeColor};
-    box-shadow: ${({ theme }) => theme.colors.hoverColor} 0px 0px 0px 3px;
+    border: 1px solid ${({ theme }) => theme.colors.primary1};
+    box-shadow: ${({ theme }) => theme.colors.alpha_violet1} 0px 0px 0px 3px;
   }
 `;

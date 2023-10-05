@@ -26,12 +26,12 @@ function PostDetail({ data, setIsEditing }: PostDetailProps) {
         <TitleContainer>
           <Col justify="space-between">
             <Title>{data.title}</Title>
-            <InlineButtonGroup>
+            <ButtonGroup>
               <Button onClick={handleEditClick}>
                 <FiEdit />
               </Button>
               <DeletePostButton postId={data.id!} />
-            </InlineButtonGroup>
+            </ButtonGroup>
           </Col>
           <Col justify="flex-start">
             <Date>
@@ -45,7 +45,7 @@ function PostDetail({ data, setIsEditing }: PostDetailProps) {
         </TitleContainer>
         <PostContent>{data.content}</PostContent>
         <SummaryContainer>
-          <Desc>💡</Desc>
+          <Desc>✍️</Desc>
           <Summary>{data.summary}</Summary>
         </SummaryContainer>
       </ContentContainer>
@@ -56,7 +56,7 @@ function PostDetail({ data, setIsEditing }: PostDetailProps) {
 const ContentContainer = styled.div`
   width: ${({ theme }) => theme.sizes.sm};
   max-width: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bg_element4};
   border-radius: 8px;
   margin: 20px 0 20px;
   padding: 1rem;
@@ -68,7 +68,7 @@ const TitleContainer = styled.div`
   width: calc(100% - 16px);
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.alpha3};
   margin-bottom: 10px;
 `;
 
@@ -79,6 +79,7 @@ const Col = styled.div<{ justify?: string }>`
 `;
 
 const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.text1};
   font-size: ${({ theme }) => theme.fontSize.subTitle}px;
   font-weight: 500;
   word-break: keep-all;
@@ -90,7 +91,7 @@ const ColDate = styled.span`
   display: flex;
   align-items: center;
   gap: 3px;
-  color: ${({ theme }) => theme.colors.tagText};
+  color: ${({ theme }) => theme.colors.text4};
 `;
 
 const Date = styled(ColDate)`
@@ -105,8 +106,8 @@ const SummaryContainer = styled.p`
   line-height: 1.3rem;
   padding: 6px 12px;
   border-radius: 12px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.alpha_violet2};
+  color: ${({ theme }) => theme.colors.text1};
   word-break: break-word;
   white-space: pre-line;
   box-sizing: content-box;
@@ -122,13 +123,13 @@ const Desc = styled.span`
 const Summary = styled.span``;
 
 const PostContent = styled.p`
-  color: #666;
+  color: ${({ theme }) => theme.colors.text2};
   font-size: 0.87rem;
   margin-bottom: 16px;
   line-height: 1.7em;
 `;
 
-const InlineButtonGroup = styled.div`
+const ButtonGroup = styled.div`
   display: inline-flex;
   gap: 5px;
   margin-left: 10px;
@@ -136,7 +137,7 @@ const InlineButtonGroup = styled.div`
 
 const Button = styled.div`
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.tagText};
+  color: ${({ theme }) => theme.colors.text3};
   border: none;
   padding: 0;
   cursor: pointer;
@@ -144,7 +145,7 @@ const Button = styled.div`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.colors.activeColor};
+    color: ${({ theme }) => theme.colors.primary1};
   }
 `;
 

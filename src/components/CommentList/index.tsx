@@ -23,7 +23,7 @@ function CommentsList({ postId }: CommentsListProps) {
 
 const Container = styled.div`
   width: ${({ theme }) => theme.sizes.sm};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bg_element4};
   max-width: 100%;
   border-radius: 8px;
   margin-bottom: 20px;

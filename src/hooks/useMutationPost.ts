@@ -12,7 +12,7 @@ import { queryClient } from "../config/queryClient";
 import { IPost } from "../config/firebasetype";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { postModalState } from "../store/postAtoms";
+import { postModalState } from "../recoil/Modal";
 
 export const useAddPost = () => {
   const setIsModalOpen = useSetRecoilState(postModalState);

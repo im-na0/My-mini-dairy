@@ -1,7 +1,6 @@
 import React from "react";
 import { useDeletePost } from "../../hooks/useMutationPost";
 import styled from "styled-components";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiTrash } from "react-icons/fi";
 
 interface DeletePostButtonProps {
@@ -26,7 +25,7 @@ function DeletePostButton({ postId }: DeletePostButtonProps) {
 
 const DeleteButton = styled.button`
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.tagText};
+  color: ${({ theme }) => theme.colors.text3};
   border: none;
   padding: 0;
   cursor: pointer;
@@ -34,7 +33,7 @@ const DeleteButton = styled.button`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.colors.activeColor};
+    color: ${({ theme }) => theme.colors.primary1};
   }
 `;
 

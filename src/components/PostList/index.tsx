@@ -10,13 +10,12 @@ interface PostListProps {
 
 function PostList({ data }: PostListProps) {
   const { date, day } = formatDate(data.createdAt?.toDate());
-  const isWeekend = day === "Sun" || day === "Sat";
 
   return (
     <PostItem key={data.id}>
       <Item to={`/post/${data.id}`} state={{ title: data.title }}>
-        <ColDate>
-          <Date $isWeekend={isWeekend}>{date}</Date>
+        <ColDate $day={day}>
+          <Date>{date}</Date>
           <Day>{day.toUpperCase()}</Day>
         </ColDate>
         <ColInfo>
@@ -32,7 +31,7 @@ export default PostList;
 
 const PostItem = styled.li`
   width: ${({ theme }) => theme.sizes.sm};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bg_element4};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -44,7 +43,7 @@ const PostItem = styled.li`
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px ${({ theme }) => theme.colors.alpha2};
   }
 `;
 
@@ -52,25 +51,29 @@ const Item = styled(Link)`
   display: flex;
   width: 100%;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.text1}
   font-size: ${({ theme }) => theme.fontSize.subTitle}px;
   transition: color 0.3s ease-in-out;
 `;
 
-const ColDate = styled.div`
+const ColDate = styled.div<{ $day?: string }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 0.2;
   margin-right: 1rem;
+  color: ${({ $day, theme }) =>
+    $day === "Sun" ? "red" : $day === "Sat" ? "blue" : theme.colors.text2};
 `;
-const Date = styled.p<{ $isWeekend?: boolean }>`
+
+const Date = styled.p`
   font-size: 1.45rem;
-  color: ${({ $isWeekend }) => ($isWeekend ? "red" : "black")};
+  font-weight: 600;
 `;
 const Day = styled.span`
   font-size: 0.8rem;
+  font-weight: 600;
 `;
 
 const ColInfo = styled.div`
@@ -81,6 +84,7 @@ const ColInfo = styled.div`
 
 const Title = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.subTitle}px;
+  color: ${({ theme }) => theme.colors.text1};
   font-weight: 500;
   word-break: keep-all;
   line-height: 1.2em;
@@ -91,7 +95,7 @@ const Summary = styled.p`
   line-height: 1.3rem;
   padding: 6px 0px;
   border-radius: 12px;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.text3};
   word-break: break-word;
   white-space: pre-line;
   box-sizing: content-box;

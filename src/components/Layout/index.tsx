@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import ThemeSwitch from "../Switch";
 
 function Layout({ children }: { children: ReactNode }) {
   return (
@@ -11,9 +12,11 @@ function Layout({ children }: { children: ReactNode }) {
             <Link to="/">My Blog</Link>
           </Title>
         </Header>
-
         <Wrapper>{children}</Wrapper>
       </Container>
+      <Footer>
+        <ThemeSwitch />
+      </Footer>
     </>
   );
 }
@@ -28,7 +31,7 @@ const Container = styled.div`
 const Header = styled.div``;
 
 const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text1};
   font-size: ${({ theme }) => theme.fontSize.title}px;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -41,6 +44,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const Footer = styled.div`
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  padding: 0 15px;
 `;
 
 export default Layout;

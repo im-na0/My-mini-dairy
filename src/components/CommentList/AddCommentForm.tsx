@@ -50,7 +50,7 @@ const CommentContainer = styled.div`
   width: 380px;
   padding: 1rem;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bg_element4};
 `;
 
 const Form = styled.form`
@@ -66,7 +66,8 @@ const Input = styled.input`
   border-radius: 12px;
   max-width: 160px;
   height: 38px;
-  background-color: ${({ theme }) => theme.colors.inputColor};
+  background-color: ${({ theme }) => theme.colors.bg_element3};
+  color: ${({ theme }) => theme.colors.text2};
 `;
 
 const TextareaContainer = styled.div`
@@ -82,7 +83,8 @@ const Textarea = styled.textarea`
   width: 100%;
   height: 80px;
   resize: none;
-  background-color: ${({ theme }) => theme.colors.inputColor};
+  background-color: ${({ theme }) => theme.colors.bg_element3};
+  color: ${({ theme }) => theme.colors.text2};
 `;
 const SendButton = styled.button`
   display: flex;
@@ -90,10 +92,10 @@ const SendButton = styled.button`
   justify-content: center;
   width: 28px;
   height: 28px;
-  background-color: rgb(255, 255, 255);
+  background-color: ${({ theme }) => theme.colors.bg_element4};
   border-radius: 2rem;
-  border: 1px solid rgb(234, 234, 236);
-  color: ${({ theme }) => theme.colors.activeColor};
+  border: 1px solid ${({ theme }) => theme.colors.border3};
+  color: ${({ theme }) => theme.colors.primary1};
   cursor: pointer;
   transition: all 0.1s ease-out 0s;
   position: absolute;
@@ -101,8 +103,8 @@ const SendButton = styled.button`
   right: 10px;
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.activeColor};
-    box-shadow: ${({ theme }) => theme.colors.hoverColor} 0px 0px 0px 3px;
+    border: 1px solid ${({ theme }) => theme.colors.primary1};
+    box-shadow: ${({ theme }) => theme.colors.alpha_violet1} 0px 0px 0px 3px;
   }
 `;
 export default AddCommentForm;

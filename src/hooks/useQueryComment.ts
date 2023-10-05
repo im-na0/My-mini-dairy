@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import {
   collection,
-  query,
-  where,
   getDocs,
   onSnapshot,
   orderBy,
+  query,
+  where,
 } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
 import { commentConverter } from "../config/firebasetype";
@@ -18,8 +18,7 @@ async function fetchComments(postId: string) {
     where("postId", "==", postId),
   );
   const querySnapshot = await getDocs(q);
-  const comments = querySnapshot.docs.map((doc) => doc.data());
-  return comments;
+  return querySnapshot.docs.map((doc) => doc.data());
 }
 
 export const useComments = (postId: string) => {

@@ -14,13 +14,6 @@ export interface IPost {
   createdAt: Timestamp;
 }
 
-export interface IComment {
-  id: string;
-  content: string;
-  name: string;
-  createdAt: Timestamp;
-}
-
 export class Post {
   constructor(
     public id: string,

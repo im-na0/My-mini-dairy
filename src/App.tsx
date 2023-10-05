@@ -1,21 +1,27 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { useRecoilValue } from "recoil";
+import { lightTheme, darkTheme } from "./theme";
+import { themeState } from "./recoil/Theme";
 import Main from "./pages/Main";
 import Detail from "./pages/Detail";
-import { ReactQueryDevtools } from "react-query/devtools";
 
 function App() {
+  const currentTheme = useRecoilValue(themeState);
   return (
     <>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />}></Route>
-          <Route path="/post/:id" element={<Detail />}></Route>
-        </Routes>
-      </BrowserRouter>
-      <ReactQueryDevtools initialIsOpen={true} />
+      <ThemeProvider theme={currentTheme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Main />}></Route>
+            <Route path="/post/:id" element={<Detail />}></Route>
+          </Routes>
+        </BrowserRouter>
+        <ReactQueryDevtools initialIsOpen={true} />
+      </ThemeProvider>
     </>
   );
 }
@@ -78,8 +84,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Source Sans 3', sans-serif;
-    background-color: ${({ theme }) => theme.colors.bgColor};
-    color: ${({ theme }) => theme.colors.textColor};
+    background-color: ${({ theme }) => theme.colors.bg_page1};
+    color: ${({ theme }) => theme.colors.text2};
   }
   a {
     text-decoration: none;

@@ -51,8 +51,8 @@ function Detail() {
 
 const Button = styled.button`
   padding: 0.5rem 0.875rem 0.5rem 0.75rem;
-  border: 1px solid ${({ theme }) => theme.colors.activeColor};
-  color: ${({ theme }) => theme.colors.activeColor};
+  border: 1px solid ${({ theme }) => theme.colors.primary1};
+  color: ${({ theme }) => theme.colors.primary1};
   background-color: transparent;
   border-radius: 2rem;
   font-size: 0.875rem;
@@ -67,8 +67,8 @@ const Button = styled.button`
   transition: all 0.1s ease-out 0s;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.activeColor};
-    color: rgb(255, 255, 255);
+    background: ${({ theme }) => theme.colors.primary1};
+    color: ${({ theme }) => theme.colors.text6};
   }
 `;
 

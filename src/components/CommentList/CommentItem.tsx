@@ -78,7 +78,7 @@ function CommentItem({ comment }: any) {
 
 const Item = styled.div`
   padding: 1rem;
-  border-bottom: 1px dashed ${({ theme }) => theme.colors.border};
+  border-bottom: 1px dashed ${({ theme }) => theme.colors.border3};
   &:last-child {
     border: none;
   }
@@ -101,7 +101,8 @@ const Input = styled.input`
   border-radius: 12px;
   max-width: 160px;
   height: 38px;
-  background-color: ${({ theme }) => theme.colors.inputColor};
+  background-color: ${({ theme }) => theme.colors.bg_element3};
+  color: ${({ theme }) => theme.colors.text2};
 `;
 
 const Textarea = styled.textarea`
@@ -113,7 +114,8 @@ const Textarea = styled.textarea`
   width: 100%;
   height: 80px;
   resize: none;
-  background-color: ${({ theme }) => theme.colors.inputColor};
+  background-color: ${({ theme }) => theme.colors.bg_element3};
+  color: ${({ theme }) => theme.colors.text2};
 `;
 
 const Button = styled.button`
@@ -122,10 +124,10 @@ const Button = styled.button`
   justify-content: center;
   width: 28px;
   height: 28px;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bg_element4};
   border-radius: 2rem;
-  border: 1px solid rgb(234, 234, 236);
-  color: ${({ theme }) => theme.colors.activeColor};
+  border: 1px solid ${({ theme }) => theme.colors.border3};
+  color: ${({ theme }) => theme.colors.primary1};
   cursor: pointer;
   transition: all 0.1s ease-out 0s;
   position: absolute;
@@ -133,8 +135,8 @@ const Button = styled.button`
   right: 10px;
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.activeColor};
-    box-shadow: ${({ theme }) => theme.colors.hoverColor} 0px 0px 0px 3px;
+    border: 1px solid ${({ theme }) => theme.colors.primary1};
+    box-shadow: ${({ theme }) => theme.colors.alpha_violet1} 0px 0px 0px 3px;
   }
 `;
 
@@ -145,8 +147,8 @@ const CommentContent = styled.span`
   line-height: 1.3rem;
   padding: 6px 12px;
   border-radius: 12px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.alpha_violet2};
+  color: ${({ theme }) => theme.colors.text1};
   word-break: break-word;
   white-space: pre-line;
   box-sizing: content-box;
@@ -168,7 +170,7 @@ const CommentName = styled.span`
   font-weight: 500;
   text-decoration: none;
   font-size: 0.875rem;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.text2};
   white-space: nowrap;
   margin-right: 13px;
 `;
@@ -177,7 +179,7 @@ const Date = styled.span`
   font-size: 0.75rem;
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.tagText};
+  color: ${({ theme }) => theme.colors.text4};
 `;
 
 const ButtonGroup = styled.span`
@@ -190,7 +192,7 @@ const ButtonGroup = styled.span`
 
 const SmallButton = styled.button`
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.activeColor};
+  color: ${({ theme }) => theme.colors.primary1};
   border: none;
   padding: 0;
   cursor: pointer;
@@ -198,7 +200,7 @@ const SmallButton = styled.button`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.colors.activeColor};
+    color: ${({ theme }) => theme.colors.primary1};
   }
 `;
 

@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import PostList from "../components/PostList";
 import AddPostForm from "../components/PostList/AddPostForm";
 import Layout from "../components/Layout";

@@ -11,7 +11,7 @@ function DeletePostButton({ postId }: DeletePostButtonProps) {
   const deleteMutation = useDeletePost();
 
   const handleDelete = async () => {
-    if (window.confirm("Are you sure you want to delete this post?")) {
+    if (window.confirm("정말로 삭제하시겠습니까? 😧")) {
       await deleteMutation.mutateAsync(postId);
     }
   };

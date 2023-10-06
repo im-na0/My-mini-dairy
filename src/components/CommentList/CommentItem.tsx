@@ -14,7 +14,9 @@ function CommentItem({ comment }: any) {
   const updateCommentMutation = useUpdateComment();
 
   const handleDelete = () => {
-    deleteCommentMutation.mutate(comment.id);
+    if (window.confirm("정말로 삭제하시겠습니까? 😧")) {
+      deleteCommentMutation.mutate(comment.id);
+    }
   };
 
   const handleUpdate = () => {

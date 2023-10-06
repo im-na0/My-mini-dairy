@@ -25,7 +25,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 5rem 2rem;
 `;
 
 const Header = styled.div``;
@@ -40,7 +40,6 @@ const Title = styled.h1`
 
 const Wrapper = styled.div`
   width: ${({ theme }) => theme.sizes.sm};
-  max-height: 580px;
   display: flex;
   flex-direction: column;
   align-items: center;

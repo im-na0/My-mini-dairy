@@ -27,7 +27,6 @@ function App() {
 export default App;
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&display=swap');
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -81,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Pretendard', sans-serif;
     background-color: ${({ theme }) => theme.colors.bg_page1};
     color: ${({ theme }) => theme.colors.text2};
   }
